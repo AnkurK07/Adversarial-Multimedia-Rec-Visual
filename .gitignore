@@ -170,8 +170,7 @@ cython_debug/
 # PyPI configuration file
 .pypirc
 
-Experiment\mongidb.ipynb
-Experiment\Amazon_Fashion_Dataset.csv
+
 
 artifact/
 cred.txt

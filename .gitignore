@@ -174,3 +174,6 @@ cython_debug/
 
 artifact/
 cred.txt
+
+Experiment/Amazon_Fashion_Dataset.csv
+Experiment\mongidb.ipynb

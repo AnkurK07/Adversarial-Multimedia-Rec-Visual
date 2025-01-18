@@ -7,6 +7,7 @@ import cornac
 import dagshub
 import json
 import os
+from dotenv import load_dotenv
 
 from dataclasses import asdict
 from cornac.experiment import Experiment
@@ -27,9 +28,10 @@ from src.Adversial_Multimedia_Recommendation.AMRunner import RunExp
 from src.Adversial_Multimedia_Recommendation.AMR_Model import AMRModel
 
 # Getting mlflow crediantials
-tracking_uri = os.getenv("tracking_uri")
-repo_owner = os.getenv("repo_owner")
-repo_name = os.getenv("repo_name")
+load_dotenv()
+tracking_uri = os.getenv("TRACKING_URI")
+repo_owner = os.getenv("REPO_OWNER")
+repo_name = os.getenv("REPO_NAME")
 
 # setting up the mlflow
 experiment_name ='Experiment_1'

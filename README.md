@@ -1,5 +1,6 @@
 # Adversarial Multimedia Recommendation System for Visual Recommnedation
-![image](https://github.com/user-attachments/assets/7dc129b6-b79d-4398-a8ae-f962c9124c65)
+![image](https://github.com/user-attachments/assets/29f30496-beaa-4352-b040-0e08539c7b97)
+
 
 # Problem Statement
 In today’s digital economy, **visual recommendation systems** have become a cornerstone for industries where product appearance significantly influences customer decisions. Sectors such as **clothing and fashion, furniture and home décor, beauty and cosmetics, art and design, and food and beverage** heavily rely on visually-driven recommendations to engage customers and drive sales. Leading **e-commerce** platforms like **Amazon, Flipkart, and Alibaba, fashion retailers like Zara, H&M, and ASOS, and lifestyle platforms like Pinterest and Instagram Shopping** use advanced visual recommendation systems to provide personalized and visually appealing product suggestions.

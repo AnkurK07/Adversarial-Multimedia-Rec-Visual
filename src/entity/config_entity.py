@@ -37,7 +37,7 @@ class ModelsaveConfig:
 # Metric saving data class
 class MetricsaveConfig:
      metric_saving_dir: str = os.path.join(training_pipeline_config.artifact_dir, METRIC_SAVING_DIR_NAME)
-     metric_store_file_path: str =  os.path.join(metric_saving_dir,METRIC_FILE_NAME)
+     metric_store_file_path: str =  os.path.join(metric_saving_dir)
 
 
     

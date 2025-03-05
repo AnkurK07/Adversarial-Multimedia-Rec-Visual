@@ -5,7 +5,7 @@ import base64
 page_bg_img = f"""
 <style>
 .stApp {{
-    background-image: url("https://img.freepik.com/free-vector/interior-design-dressing-room_1308-55282.jpg?t=st=1737143988~exp=1737147588~hmac=17b04a6d67abe255a5054a6b7eb4f8c6660efed7eb0ad383ebdfe7e7448c384c&w=900");
+    background-image: url("https://static.vecteezy.com/system/resources/previews/035/701/136/non_2x/set-of-fashion-clothes-for-women-casual-garments-and-accessories-for-spring-and-summer-jacket-bags-shoes-trousers-dress-hats-flying-flat-illustrations-isolated-on-white-background-vector.jpg");
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -44,11 +44,21 @@ load_dotenv()
 tracking_uri = os.getenv("TRACKING_URI")
 repo_owner = os.getenv("REPO_OWNER")
 repo_name = os.getenv("REPO_NAME")
-dagshub.init(repo_owner=repo_owner, repo_name=repo_name, mlflow=True)
-mlflow.set_tracking_uri(tracking_uri)
 model_name = "AMR-Model"
 model_version = 1
-model = mlflow.pyfunc.load_model(model_uri=f"models:/{model_name}/{model_version}")  
+
+@st.cache_resource
+def load_model():
+    """Load the model only once and cache it."""
+    dagshub.init(repo_owner=repo_owner, repo_name=repo_name, mlflow=True)
+    mlflow.set_tracking_uri(tracking_uri)
+    model_name = "AMR-Model"
+    model_version = 1
+    print("Loading model for the first time...")
+    return mlflow.pyfunc.load_model(model_uri=f"models:/{model_name}/{model_version}")
+
+# Load model once and reuse
+model = load_model()
 # #------------------------------------------------------Making App------------------------------------------------------------------------------
 from src.utils.show_recommendation import RecommendedItemsDisplay
 # Selecting a user ids
